@@ -1,6 +1,7 @@
 package org.jmura.mantenedor.backend.models;
 
 import javax.persistence.*;
+import java.sql.Date;
 
 @Entity
 @Table(name = "TAREA")
@@ -13,8 +14,8 @@ public class Tarea {
     @Column(name = "descripcion")
     String descripcion;
 
-    /*@Column(name = "fechaCreacion")
-    String fechaCreacion;*/
+    @Column(name = "fecha_creacion")
+    Date fechaCreacion;
 
     @Column(name = "vigente")
     Boolean vigente;
@@ -41,5 +42,13 @@ public class Tarea {
 
     public void setVigente(Boolean vigente) {
         this.vigente = vigente;
+    }
+
+    public Date getFechaCreacion() {
+        return fechaCreacion;
+    }
+
+    public void setFechaCreacion(Date fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
     }
 }

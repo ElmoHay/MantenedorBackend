@@ -3,5 +3,6 @@ DROP TABLE IF EXISTS TAREA;
 CREATE TABLE TAREA (
   identificador INT AUTO_INCREMENT PRIMARY KEY,
   descripcion VARCHAR(250) NOT NULL,
-  vigente BIT NOT NULL
+  fecha_creacion DATE NOT NULL,
+  vigente BOOLEAN NOT NULL
 )
