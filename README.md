@@ -22,7 +22,7 @@ No se requiere levantar ninguna base de datos aparte. El aplicativo levanta auto
 
 `mvn spring-boot:run`
 
-3.comprobar visualizando que la instancia de tomcat está corriendo, visitar en tu navegador preferido:
+3. comprobar visualizando que la instancia de tomcat está corriendo, visitar en tu navegador preferido:
 
 `http://localhost:8082/tareas/listar`
 
