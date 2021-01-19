@@ -27,7 +27,7 @@ No se requiere levantar ninguna base de datos aparte. El aplicativo levanta auto
 `http://localhost:8082/tareas/listar`
 
 
-### Funcionalidades implementadas: Se exponen los siguientes endpoints
+## Funcionalidades implementadas: Se exponen los siguientes endpoints
 
 [GET] Listar tareas (todas)
 
@@ -73,7 +73,7 @@ desplegar proyecto y visitar url
 _nota : para utilizar Swagger en este proyecto se utilizó dependencia maven_ `springfox-boot-starter`
 
 
-### Validaciones Agregar/Editar
+## Validaciones Agregar/Editar
 
 los siguientes campos no pueden ser vacíos:
 - descripcion
