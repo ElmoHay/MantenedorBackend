@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TareaServiceImpl implements TareaService{
@@ -21,6 +22,16 @@ public class TareaServiceImpl implements TareaService{
     public List<Tarea> getAll()
     {
         return tareaRepository.findAll();
+    }
+
+    @Override
+    public Tarea get(Long identificador) throws Exception
+    {
+        Optional<Tarea> tareaOptional = tareaRepository.findById(identificador);
+        if (!tareaOptional.isPresent()) {
+            throw new Exception("Tarea con el id "+identificador+" no encontrada");
+        }
+        return tareaOptional.get();
     }
 
     @Override

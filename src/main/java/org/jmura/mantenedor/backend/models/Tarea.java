@@ -1,6 +1,7 @@
 package org.jmura.mantenedor.backend.models;
 
 import javax.persistence.*;
+import javax.validation.constraints.*;
 import java.sql.Date;
 
 @Entity
@@ -11,12 +12,15 @@ public class Tarea {
     @Column(name = "identificador")
     Long identificador;
 
+    @NotBlank
     @Column(name = "descripcion")
     String descripcion;
 
+    @NotNull
     @Column(name = "fecha_creacion")
     Date fechaCreacion;
 
+    @NotNull
     @Column(name = "vigente")
     Boolean vigente;
 

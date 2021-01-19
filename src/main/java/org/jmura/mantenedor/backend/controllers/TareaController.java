@@ -12,19 +12,25 @@ import java.util.List;
 @RestController
 @RequestMapping("tareas")
 public class TareaController {
-    @Autowired
+
     TareaService tareaService;
 
-    public TareaController() { }
+    @Autowired
+    public TareaController(TareaService tareaService) { this.tareaService=tareaService; }
 
     @GetMapping(path = "listar")
     public @ResponseBody List<Tarea> getAllTareas(){ return tareaService.getAll();}
 
     @PostMapping
-    public ResponseEntity<Tarea> create(@RequestBody Tarea tarea)
+    public ResponseEntity<String> create(@RequestBody Tarea tarea)
     {
-        Tarea tareaGuardada = tareaService.create(tarea);
-        return new ResponseEntity<>(tareaGuardada, HttpStatus.CREATED);
+        tareaService.create(tarea);
+        return new ResponseEntity<String>("tarea guardada exitosamente", HttpStatus.CREATED);
+    }
+
+    @GetMapping("/{identificador}")
+    public ResponseEntity<Tarea> get(@PathVariable(value = "identificador") Long id) throws Exception {
+        return new ResponseEntity<>(tareaService.get(id),HttpStatus.FOUND);
     }
 
     @PutMapping("/{identificador}")

@@ -5,6 +5,7 @@ import java.util.List;
 
 public interface TareaService {
     List<Tarea> getAll();
+    Tarea get(Long identificador) throws Exception;
     Tarea create(Tarea tarea);
     Tarea update(Long identificador, Tarea tarea);
     String delete(Long identificador);
